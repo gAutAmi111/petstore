@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}PetDelete{% endblock %}
+{% block body %}
+<div class="container">
+    <div class="row">
+
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h3>Are you sure want to delete {{object.petname}}</h3>
+            <input type="submit" value="Confirm">
+            <a href="{% url 'dashboard' %}"><input type="button" value="Cancel"></a>
+        </form>
+
+    </div>
+</div>
+{% endblock %}
